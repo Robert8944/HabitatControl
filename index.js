@@ -49,6 +49,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     } 
     document.getElementById("totalPower").innerHTML = totalPower + " Watts";
 
-    document.getElementById("hoursLeft").innerHTML = Math.round(((numberOfBatteryCells * batteryCellCapacity) / totalPower)*100)/100 + " Hours left";
+    document.getElementById("hoursLeft").innerHTML = Math.round((((numberOfBatteryCells * batteryCellCapacity) / totalPower)*(fakeBatteryLevelAvg/100))*100)/100 + " Hours left";
 
 });
