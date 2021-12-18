@@ -8,29 +8,52 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="ie.css">
-        <script src="internalenvironment.js"></script>
+        <script src="galleyaccess.js"></script>
+        <script src="mobileNav.js"></script>
     </head>
     <body>
         <!-- Navbar -->
         <div class="w3-top">
-        <div class="w3-bar w3-red w3-card w3-left-align w3-large">
-            <a href="lock.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-whit">Lock</a>
-            <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-whit">System Status</a>
-            <a href="lighting.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Lighting</a>
-            <a href="internalenvironment.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Internal Environment</a>
-            <a href="galleyaccess.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Galley Access</a>
-            <a href="sound.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Sound</a>
-            <a href="surroundings.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Surroundings</a>
-        </div>
+            <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+                <a href="lock.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-whit">Lock</a>
+                <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-whit">System Status</a>
+                <a href="lighting.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Lighting</a>
+                <a href="internalenvironment.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Internal Environment</a>
+                <a href="galleyaccess.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Galley Access</a>
+                <a href="sound.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Sound</a>
+                <a href="surroundings.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Surroundings</a>
+            </div>
         </div>
         <!-- Header -->
         <header class="w3-container w3-red w3-center" style="padding-top:40px">
         <h1 class="w3-margin w3-jumbo">Galley Access</h1>
         </header>
+
+        <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container w3-center">
+            <div class="w3-content">
+                <h1>The Galley is currently <span style="color:red" id="galleyStatusDisplay">LOCKED</span></h1>
+                <h5>Enter passcode:</h5>
+                <button class="button" id="pinLock1" onclick="pressPin1()">&#9824</button>
+                <button class="button" id="pinLock2" onclick="pressPin2()">&#9827</button>
+                <button class="button" id="pinLock3" onclick="pressPin3()">&#9829</button>
+                <button class="button" id="pinLock4" onclick="pressPin4()">&#9830</button>
+            </div>
+            <div class="w3-row-padding w3-padding-64 w3-container">
+                <div class="w3-content w3-center">
+                    <p id="passcodeInput"></p>
+                </div>
+            </div>
+            <div class="w3-row-padding w3-padding-64 w3-container">
+                <div class="w3-content w3-center">
+                    <button class="button" id="submitCode" onclick="submitCode()">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+
         <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
             <div class="w3-xlarge w3-padding-32">
             </div>
+            <link rel="stylesheet" href="ga.css">
         </footer>
     </body>
 </html>

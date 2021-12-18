@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
+    <script src="mobileNav.js"></script>
   </head>
   <body>
     <!-- Navbar -->
     <div class="w3-top">
       <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="navMenu()" title="Toggle Navigation Menu"><em class="fa fa-bars"></em></a>
         <a href="lock.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-whit">Lock</a>
         <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-whit">System Status</a>
         <a href="lighting.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Lighting</a>
@@ -29,14 +31,13 @@
       <h1 class="w3-margin w3-jumbo">System Status</h1>
     </header>
     <!-- First Grid -->
-    <div class="w3-row-padding w3-padding-32 w3-container">
+    <div class="w3-row-padding w3-padding-32 w3-light-grey w3-container">
       <div class="w3-content">
         <div class="w3-twothird">
           <h1 id="batteryPercent">Current Battery Charge: </h1>
           <p class="w3-text-grey">Mind your electricity usage! Low battery power can mean poor security and defence, and decreased environmental regulation. Keep battery level high to keep morale high.</p>
           <h5>Power Use:</h5>
           <table>
-            <caption>Power drawing devices</caption>
             <tr>
               <th id="deviceTitle">Device</th>
               <th id="expectedDrawTitle">Expected Power Draw (Watts)</th>

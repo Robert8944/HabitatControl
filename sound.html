@@ -8,26 +8,147 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="ie.css">
-        <script src="internalenvironment.js"></script>
+        <script src="sound.js"></script>
+        <script src="mobileNav.js"></script>
     </head>
     <body>
         <!-- Navbar -->
         <div class="w3-top">
-        <div class="w3-bar w3-red w3-card w3-left-align w3-large">
-            <a href="lock.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-whit">Lock</a>
-            <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-whit">System Status</a>
-            <a href="lighting.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Lighting</a>
-            <a href="internalenvironment.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Internal Environment</a>
-            <a href="galleyaccess.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Galley Access</a>
-            <a href="sound.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Sound</a>
-            <a href="surroundings.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Surroundings</a>
-        </div>
+            <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+                <a href="lock.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-whit">Lock</a>
+                <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-whit">System Status</a>
+                <a href="lighting.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Lighting</a>
+                <a href="internalenvironment.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Internal Environment</a>
+                <a href="galleyaccess.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Galley Access</a>
+                <a href="sound.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Sound</a>
+                <a href="surroundings.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Surroundings</a>
+            </div>
         </div>
         <!-- Header -->
         <header class="w3-container w3-red w3-center" style="padding-top:40px">
         <h1 class="w3-margin w3-jumbo">Sound Controls</h1>
         </header>
+
+        <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+            <div class="w3-content">
+                <div class="w3-third w3-center">
+                    <h1>System Settings:</h1>
+                    <h5>Stereo Power:
+                        <!-- Rounded switch -->
+                        <label class="w3-right switch">
+                            <input type="checkbox" id="stereoPower" checked="false" onclick="stereoPowerToggle()">
+                            <span class="slider round"></span>
+                        </label>
+                    </h5>
+                    <h5>Outdoor Speakers:
+                        <!-- Rounded switch -->
+                        <label class="w3-right switch">
+                            <input type="checkbox" id="indoorSpeaker" checked="false" onclick="outdoorSpeakerToggle()">
+                            <span class="slider round"></span>
+                        </label>
+                    </h5>
+                    <h5>Indoor Speakers:
+                        <!-- Rounded switch -->
+                        <label class="w3-right switch">
+                            <input type="checkbox" id="outdoorSpeaker" checked="false" onclick="indoorSpeakerToggle()">
+                            <span class="slider round"></span>
+                        </label>
+                    </h5>
+                    <h5>Volume Level: <span id="volumeDisplay">50</span>%</h5>
+                    <input type="range" id="volumeSlider" min=0 max=100 value=50 onclick="setVolume()"></input>
+                </div>
+                <div class="w3-twothird w3-center">
+                    <h1>Input Source:</h1>
+                    <h5>Use external source:
+                        <!-- Rounded switch -->
+                        <label class="w3-right switch">
+                            <input type="checkbox" id="externalSource" checked="false" onclick="externalSource()">
+                            <span class="slider round"></span>
+                        </label>
+                    </h5>
+                    <h5>Use internal source:
+                        <!-- Rounded switch -->
+                        <label class="w3-right switch">
+                            <input type="checkbox" id="internalSource" checked="false" onclick="internalSource()">
+                            <span class="slider round"></span>
+                        </label>
+                    </h5>
+                    <select id="musicGenreSelector">
+                        <option value="rock">Rock</option>
+                        <option value="country">Country</option>
+                        <option value="classical">Classical</option>
+                        <option value="dance">Dance</option>
+                        <option value="indie">Indie</option>
+                    </select><br><br><br>
+                    <div class="btn-group">
+                        <button id="skipForwardButton" onclick="skipForwardButtonPressed()">Skip Forward</button>
+                        <button style="width:100px" id="playPauseButton" onclick="playPauseButtonPressed()">Play</button>
+                        <button id="skipBackButton" onclick="skipBackButtonPressed()">Skip Backward</button>
+                    </div> 
+                    <h5>Now playing:</h5>
+                    <p id="nowPlayingDisplay">Nothing</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Style -->
+        <style>
+            /* The switch - the box around the slider */
+            .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            }
+            /* Hide default HTML checkbox */
+            .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            }
+            /* The slider */
+            .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            }
+            .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            }
+            input:checked + .slider {
+            background-color: #2196F3;
+            }
+            input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+            }
+            input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+            }
+            /* Rounded sliders */
+            .slider.round {
+            border-radius: 34px;
+            }
+            .slider.round:before {
+            border-radius: 50%;
+            }
+        </style>
+        <link rel="stylesheet" href="sound.css">
         <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
             <div class="w3-xlarge w3-padding-32">
             </div>

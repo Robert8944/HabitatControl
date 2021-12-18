@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Environment Controls</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="lock.js"></script>
+        <script src="mobileNav.js"></script>
+    </head>
+    <body>
+        <div class="w3-top">
+            <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+                <h1 class="w3-center">SYSTEM HAS BEEN LOCKED</h1>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-padding-64 w3-container">
+            <div class="w3-content w3-center">
+                <button class="button" id="pinLock1" onclick="pressPin1()">TEST</button>
+                <button class="button" id="pinLock2" onclick="pressPin2()">TEST</button>
+                <button class="button" id="pinLock3" onclick="pressPin3()">TEST</button>
+                <button class="button" id="pinLock4" onclick="pressPin4()">TEST</button>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-padding-64 w3-container">
+            <div class="w3-content w3-center">
+                <p id="passcodeInput"></p>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-padding-64 w3-container">
+            <div class="w3-content w3-center">
+                <button class="button" id="submitCode" onclick="submitCode()">SUBMIT</button>
+            </div>
+        </div>
+    </body>
+    <link rel="stylesheet" href="lock.css">
+</html>

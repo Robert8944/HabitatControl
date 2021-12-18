@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
-
+    //use this space to pull the recent data and display it
+    document.getElementById("fanPower").checked = false;
+    document.getElementById("heaterPower").checked = false;
+    document.getElementById("airConditionerPower").checked = false;
 });
 function setFanSpeed(){
     document.getElementById("fanSpeedDisplay").innerHTML = "Fan Speed: "+document.getElementById("fanSpeed").value+"%"
