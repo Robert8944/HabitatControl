@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>System Status</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="w3-top">
+      <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+        <a href="lock.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-whit">Lock</a>
+        <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-whit">System Status</a>
+        <a href="lighting.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Lighting</a>
+        <a href="internalenvironment.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Internal Environment</a>
+        <a href="galleyaccess.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Galley Access</a>
+        <a href="sound.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Sound</a>
+        <a href="surroundings.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Surroundings</a>
+      </div>
+    </div>
+    <!-- Header -->
+    <header class="w3-container w3-red w3-center" style="padding-top:40px">
+      <h1 class="w3-margin w3-jumbo">System Status</h1>
+    </header>
+    <!-- First Grid -->
+    <div class="w3-row-padding w3-padding-32 w3-container">
+      <div class="w3-content">
+        <div class="w3-twothird">
+          <h1 id="batteryPercent">Current Battery Charge: </h1>
+          <p class="w3-text-grey">Mind your electricity usage! Low battery power can mean poor security and defence, and decreased environmental regulation. Keep battery level high to keep morale high.</p>
+          <h5>Power Use:</h5>
+          <table>
+            <caption>Power drawing devices</caption>
+            <tr>
+              <th id="deviceTitle">Device</th>
+              <th id="expectedDrawTitle">Expected Power Draw (Watts)</th>
+              <th id="espectedStatusTitle">Status</th>
+            </tr>
+            <tr>
+              <td><a href="internalenvironment.html">Air Conditioner</a></td>
+              <td id="airConditionerPower">1000</td>
+              <td id="airConditionerStatus" style="background-color: green">ON</td>
+            </tr>
+            <tr>
+              <td><a href="internalenvironment.html">Heater</a></td>
+              <td id="heaterPower">1000</td>
+              <td id="heaterStatus" style="background-color: grey">OFF</td>
+            </tr>
+            <tr>
+              <td><a href="internalenvironment.html">Fan</a></td>
+              <td id="fanPower">50</td>
+              <td id="fanStatus" style="background-color: green">ON</td>
+            </tr>
+            <tr>
+              <td><a href="galleyaccess.html">Refridgerator</a></td>
+              <td id="refridgeratorPower">500</td>
+              <td id="refridgeratorStatus" style="background-color: green">ON</td>
+            </tr>
+            <tr>
+              <td><a href="lighting.html">Interior Lights</a></td>
+              <td id="interiorLightsPower">50</td>
+              <td id="interiorLightsStatus" style="background-color: green">ON</td>
+            </tr>
+            <tr>
+              <td><a href="lighting.html">Exterior Lights</a></td>
+              <td id="exteriorLightsPower">100</td>
+              <td id="exteriorLightsStatus" style="background-color: green">ON</td>
+            </tr>
+            <tr>
+              <td><a href="sound.html">Sound System</a></td>
+              <td id="soundSystemPower">300</td>
+              <td id="soundSystemStatus" style="background-color: green">ON</td>
+            </tr>
+            <tr>
+              <td><a href="surroundings.html">Surveillance System</a></td>
+              <td id="surveillanceSystemPower">100</td>
+              <td id="surveillanceSystemStatus" style="background-color: green">ON</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td id="totalPower">31</td>
+              <td id="hoursLeft">8 hours left</td>
+            </tr>
+          </table>
+        </div>
+        <div id="batteryDisplay" class="w3-third">
+
+        </div>
+      </div>
+    </div>
+    <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+        <h1 class="w3-margin w3-xlarge"></h1>
+    </div>
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+      <div class="w3-xlarge w3-padding-32">
+      </div>
+    </footer>
+  </body>
+</html>
