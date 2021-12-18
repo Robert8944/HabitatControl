@@ -54,7 +54,7 @@
                             <span class="slider round"></span>
                         </label>
                     </h5>
-                    <h5>Volume Level: <span id="volumeDisplay">50</span>%</h5>
+                    <h5>Stereo Volume Level: <span id="volumeDisplay">50</span>%</h5>
                     <input type="range" id="volumeSlider" min=0 max=100 value=50 onclick="setVolume()"></input>
                 </div>
                 <div class="w3-twothird w3-center">
@@ -73,24 +73,34 @@
                             <span class="slider round"></span>
                         </label>
                     </h5>
-                    <select id="musicGenreSelector">
-                        <option value="rock">Rock</option>
-                        <option value="country">Country</option>
-                        <option value="classical">Classical</option>
-                        <option value="dance">Dance</option>
-                        <option value="indie">Indie</option>
+                    <h5>Use microphone source:
+                        <!-- Rounded switch -->
+                        <label class="w3-right switch">
+                            <input type="checkbox" id="microphoneSource" checked="false" onclick="microphoneSource()">
+                            <span class="slider round"></span>
+                        </label>
+                    </h5>
+                    <div id="internalMusicPlayerInfo">
+                    <select id="musicGenreSelector" onclick="genreSelected()">
+                        <option onclick="genreSelected()" value="rock">Rock</option>
+                        <option onclick="genreSelected()" value="country">Country</option>
+                        <option onclick="genreSelected()" value="classical">Classical</option>
+                        <option onclick="genreSelected()" value="dance">Dance</option>
                     </select><br><br><br>
+                    <audio id="musicObject" controls>
+                        <source id="musicSourceURL" src="music/ComfortablyNumb.mp3" type="audio/mpeg">
+                    </audio>
                     <div class="btn-group">
-                        <button id="skipForwardButton" onclick="skipForwardButtonPressed()">Skip Forward</button>
-                        <button style="width:100px" id="playPauseButton" onclick="playPauseButtonPressed()">Play</button>
                         <button id="skipBackButton" onclick="skipBackButtonPressed()">Skip Backward</button>
+                        <button id="skipForwardButton" onclick="skipForwardButtonPressed()">Skip Forward</button>
                     </div> 
+                    
                     <h5>Now playing:</h5>
-                    <p id="nowPlayingDisplay">Nothing</p>
+                    <p id="nowPlayingDisplay">ComfortablyNumb</p>
+                    </div>
                 </div>
             </div>
         </div>
-
         <!-- Slider Style -->
         <style>
             /* The switch - the box around the slider */
